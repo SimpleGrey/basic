@@ -1,4 +1,4 @@
-package edu.zhanqian.threadPool;
+package edu.zhanqian.thread.pool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
