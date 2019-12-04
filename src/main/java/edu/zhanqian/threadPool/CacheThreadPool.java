@@ -11,6 +11,7 @@ import java.util.concurrent.Executors;
 public class CacheThreadPool {
 
     public static void main(String[] args) {
+        //timeout默认60秒断开
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         for (int i = 0; i < 10; i++) {
             try {

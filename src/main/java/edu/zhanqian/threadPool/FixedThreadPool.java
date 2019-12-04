@@ -11,6 +11,7 @@ import java.util.concurrent.Executors;
 public class FixedThreadPool {
 
     public static void main(String[] args) {
+        //没有timeout的断开时长
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
         for (int i = 0; i < 10; i++) {
             final int index = i;

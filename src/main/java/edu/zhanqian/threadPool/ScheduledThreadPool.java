@@ -12,7 +12,9 @@ import java.util.concurrent.TimeUnit;
 public class ScheduledThreadPool {
 
     public static void main(String[] args) {
-//        ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(4);
+        //没有timeout的断开时长
+        ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(4);
+
 //        for (int i = 0; i < 10; i++) {
 //            scheduledThreadPool.schedule(new Runnable() {
 //                @Override
@@ -22,9 +24,8 @@ public class ScheduledThreadPool {
 //            }, 10, TimeUnit.SECONDS);
 //        }
 
-        ScheduledExecutorService scheduledThreadPool2 = Executors.newScheduledThreadPool(4);
         for (int i = 0; i < 10; i++) {
-            scheduledThreadPool2.scheduleAtFixedRate(new Runnable() {
+            scheduledThreadPool.scheduleAtFixedRate(new Runnable() {
                 @Override
                 public void run() {
                     System.out.println(Thread.currentThread().getName() + "\t延迟1秒后每3秒执行一次");
