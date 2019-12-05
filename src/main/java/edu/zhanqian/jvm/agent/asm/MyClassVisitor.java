@@ -13,11 +13,13 @@ public class MyClassVisitor extends ClassVisitor implements Opcodes {
     public MyClassVisitor(ClassVisitor cv) {
         super(ASM5, cv);
     }
+
     @Override
     public void visit(int version, int access, String name, String signature,
                       String superName, String[] interfaces) {
         cv.visit(version, access, name, signature, superName, interfaces);
     }
+
     @Override
     public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
         MethodVisitor mv = cv.visitMethod(access, name, desc, signature,
@@ -28,6 +30,7 @@ public class MyClassVisitor extends ClassVisitor implements Opcodes {
         }
         return mv;
     }
+
     class MyMethodVisitor extends MethodVisitor implements Opcodes {
         public MyMethodVisitor(MethodVisitor mv) {
             super(Opcodes.ASM5, mv);
@@ -46,6 +49,7 @@ public class MyClassVisitor extends ClassVisitor implements Opcodes {
 
         /**
          * 每当ASM访问到无参数指令时，都会调用MyMethodVisitor中的visitInsn方法。我们判断了当前指令是否为无参数的“return”指令，如果是就在它的前面添加一些指令，也就是将AOP的后置逻辑放在该方法中
+         *
          * @param opcode
          */
         @Override

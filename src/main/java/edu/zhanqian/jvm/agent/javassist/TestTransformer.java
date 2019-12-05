@@ -1,4 +1,4 @@
-package edu.zhanqian.jvm.agent.Javassist;
+package edu.zhanqian.jvm.agent.javassist;
 
 import javassist.ClassPool;
 import javassist.CtClass;
