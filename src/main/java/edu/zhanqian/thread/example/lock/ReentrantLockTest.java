@@ -5,7 +5,7 @@ package edu.zhanqian.thread.example.lock;
  * @Created by zhanqian
  * @Description ReentrantLock 锁绑定多个条件Condition
  */
-public class TestReentrantLock {
+public class ReentrantLockTest {
     /**
      *  * 锁绑定多个条件Condition
      *  * 题目：多线程之间按顺序执行，实现A->B->C三个线程启动，要求如下：

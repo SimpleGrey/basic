@@ -9,7 +9,7 @@ import edu.zhanqian.thread.model.runnable.RThread1;
  * @Created by zhanqian
  * @Description TODO
  */
-public class TestThreadState {
+public class ThreadStateTransformTest {
 
 
     public static void main(String[] args) throws InterruptedException {
