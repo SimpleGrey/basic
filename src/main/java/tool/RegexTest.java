@@ -20,7 +20,7 @@ public class RegexTest {
         File file = new File(path);
         List<String> list = new ArrayList<>();
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));//构造一个BufferedReader类来读取文件
+            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 
             String str = null;
             while ((str = br.readLine()) != null) {
