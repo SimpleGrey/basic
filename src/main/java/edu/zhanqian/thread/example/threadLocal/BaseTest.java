@@ -1,4 +1,4 @@
-package edu.zhanqian.thread.example.threadlocal;
+package edu.zhanqian.thread.example.threadLocal;
 
 /**
  * @Date 2019/12/10 14:39
