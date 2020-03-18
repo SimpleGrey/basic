@@ -94,7 +94,11 @@ public class TreeTransform {
                 //绑定node父子关系
                 node.lChild = leftNode;
                 node.rChild = rightNode;
-                node.op = sqlBinaryOpExpr.getOperator().toString();
+                if (node.op == null ) {
+                    node.op = sqlBinaryOpExpr.getOperator().toString();
+                } else {
+                    node.op = node.op + " " + sqlBinaryOpExpr.getOperator().toString();
+                }
 
                 //递归遍历
                 newTree(left, leftNode);
@@ -109,12 +113,8 @@ public class TreeTransform {
             SQLUnaryExpr sqlUnaryExpr = (SQLUnaryExpr) sqlExpr;
             SQLBinaryOpExpr sqlBinaryOpExpr = (SQLBinaryOpExpr) sqlUnaryExpr.getExpr();
             node.op = "Not";
-            Node leftNode = new Node();
-
-            //绑定node父子关系
-            node.lChild = leftNode;
             //递归遍历
-            newTree(sqlBinaryOpExpr, leftNode);
+            newTree(sqlBinaryOpExpr, node);
         }
         return true;
     }

@@ -30,7 +30,8 @@ public class MySQLParser {
 //        String sql = "select * from a where (rc>2 and (age!=10 and vc>2  or sex='male' and rc>10 ) and birth>1992 and cc>2)";
 //        String sql = "select * from a where ((age>18 and rc>2) and !((age=10 and vc>2) and (age=17 and bc<1) or sex='male' and rc>10 ) and birth>1992 and cc>2)";
 //        String sql = "select * from a where (rc>2 and ((age=10 and vc>2) and (age=17 and bc<1) or sex='male' and rc>10 ) and birth>1992 and cc>2)";
-        String sql = "select * from a where (rc>2 and !((age!=10 and vc>2) and (age=17 and bc<1) or sex='male' and rc>10 ) and birth>1992 and cc>2)";
+//        String sql = "select * from a where (rc>2 and !((age!=10 and vc>2) and (age=17 and bc<1) or sex='male' and rc>10 ) and birth>1992 and cc>2)";
+        String sql = "select * from a where (rc>2 and (!(vc>2) and (age=17 and bc<1) or sex='male' and rc>10 ) and birth>1992 and cc>2)";
         System.out.println("original:" + sql);
         SQLStatementParser parser = new MySqlStatementParser(sql);
         SQLSelectStatement sqlStatement = (SQLSelectStatement) parser.parseStatement();
