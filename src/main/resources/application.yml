@@ -1,0 +1,16 @@
+server:
+  port: 7073
+
+spring:
+  application:
+    name: basic
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://hadoop-master:3306/xh-flowable?characterEncoding=UTF-8
+    username: root
+    password: root
+flowable:
+  #关闭定时任务JOB
+  async-executor-activate: false

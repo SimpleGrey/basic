@@ -6,15 +6,15 @@ import java.io.IOException;
 
 public class JavassistTest {
     public static void main(String[] args) throws NotFoundException, CannotCompileException, IllegalAccessException, InstantiationException, IOException {
-        Base b = new Base();
+        Base2 b = new Base2();
 
         ClassPool cp = ClassPool.getDefault();
-        CtClass cc = cp.get("me.study.Javassist.Base");
+        CtClass cc = cp.get("edu.zhanqian.jvm.agent.javassist.Base2");
         CtMethod m = cc.getDeclaredMethod("process");
         m.insertBefore("{ System.out.println(\"start\"); }");
         m.insertAfter("{ System.out.println(\"end\"); }");
         Class c = cc.toClass();
-        Base h = (Base) c.newInstance();
+        Base2 h = (Base2) c.newInstance();
         h.process();
     }
 }

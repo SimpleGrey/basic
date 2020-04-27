@@ -22,7 +22,7 @@
         <hadoop.version>2.6.5</hadoop.version>
         <spark.version>2.3.1</spark.version>
         <scala.dep>2.11</scala.dep>
-        <javassist.version>3.12.1.GA</javassist.version>
+        <javassist.version>3.25.0.GA</javassist.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -34,14 +34,12 @@
             <version>1.1.10</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.25</version>
         </dependency>
-
 
         <dependency>
             <groupId>junit</groupId>
@@ -51,9 +49,9 @@
 
         <!-- https://mvnrepository.com/artifact/javassist/javassist -->
         <dependency>
-            <groupId>javassist</groupId>
+            <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
-            <version>${javassist.version}</version>
+            <version>3.25.0-GA</version>
         </dependency>
 
         <dependency>
@@ -93,6 +91,12 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-streaming_${scala.dep}</artifactId>
             <version>${spark.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -124,6 +128,14 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-annotation</artifactId>
             <version>3.1.1</version>
+        </dependency>
+
+
+        <!--flowable工作流依赖-->
+        <dependency>
+            <groupId>org.flowable</groupId>
+            <artifactId>flowable-spring-boot-starter</artifactId>
+            <version>6.3.0</version>
         </dependency>
 
     </dependencies>

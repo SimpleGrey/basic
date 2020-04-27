@@ -2,7 +2,7 @@ package edu.zhanqian.jvm.agent.javassist;
 
 import java.lang.management.ManagementFactory;
 
-public class Base {
+public class Base2 {
     public static void main(String[] args) {
         String name = ManagementFactory.getRuntimeMXBean().getName();
         String s = name.split("@")[0];
