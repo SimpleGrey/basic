@@ -18,7 +18,7 @@ public class KafkaConsumerDemo {
     private KafkaConsumerDemo() {
         Properties props = new Properties();
         props.put("bootstrap.servers", "hadoop-master:9092,hadoop-slave1:9092,hadoop-slave2:9092");
-        props.put("group.id", "test");
+        props.put("group.id", "test2");
         props.put("enable.auto.commit", "false");
         props.put("auto.commit.interval.ms", "1000");
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
@@ -29,7 +29,7 @@ public class KafkaConsumerDemo {
 
     //      ConsumerConfig.AUTO_OFFSET_RESET_CONFIG ->
     void consume() {
-        consumer.subscribe(Arrays.asList("example-news"));
+        consumer.subscribe(Arrays.asList("app-action-topic"));
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records) {

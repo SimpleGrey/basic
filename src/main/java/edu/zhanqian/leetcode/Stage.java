@@ -60,7 +60,27 @@ public class Stage {
     }
 
     public static void main(String[] args) {
-        System.out.println(waysToStep(100));
-        System.out.println(waysToStep2(100));
+//        System.out.println(waysToStep(100));
+//        System.out.println(waysToStep2(100));
+
+        int num[] = new int[]{2,1,3,4,8,1};
+        System.out.println(massage(num));
+    }
+
+    public static int massage(int[] nums) {
+        int n = nums.length;
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return nums[0];
+        }
+        int[] dp = new int[n];
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0], nums[1]);
+        for (int i = 2; i < n; i++) {
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+        }
+        return dp[n - 1];
     }
 }
