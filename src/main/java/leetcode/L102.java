@@ -15,6 +15,11 @@ import java.util.Queue;
  */
 public class L102 {
 
+    /**
+     * 广度优先搜索 BFS
+     * @param root
+     * @return
+     */
 
     public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> listList = new ArrayList<>();
