@@ -6,7 +6,11 @@
 
     <groupId>edu.zhanqian</groupId>
     <artifactId>basic</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>hadoop</module>
+    </modules>
 
     <name>basic</name>
     <!-- FIXME change it to the project's website -->

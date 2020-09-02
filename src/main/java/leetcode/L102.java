@@ -14,16 +14,47 @@ import java.util.Queue;
  * @Description TODO
  */
 public class L102 {
+    public boolean isNumber(String s) {
+
+    }
+
+    public static List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> listList = new ArrayList<>();
+        if (root == null) {
+            return listList;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            TreeNode treeNode = queue.poll();
+            int val = treeNode.val;
+            List<Integer> items = new ArrayList<>();
+            items.add(val);
+            if (treeNode.left != null) {
+                queue.add(treeNode.left);
+            }
+            if (treeNode.right != null) {
+                queue.add(treeNode.right);
+            }
+
+        }
+
+
+        return listList;
+    }
+
 
     /**
-     * 广度优先搜索 BFS
+     * 广度优先搜索 BFS  原始解法
+     *
      * @param root
      * @return
      */
 
-    public static List<List<Integer>> levelOrder(TreeNode root) {
+    public static List<List<Integer>> levelOrder2(TreeNode root) {
         List<List<Integer>> listList = new ArrayList<>();
-        if (root == null) return  listList;
+        if (root == null) return listList;
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
@@ -60,16 +91,6 @@ public class L102 {
         n2.right = n4;
 
         System.out.println(JSON.toString(levelOrder(n)));
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
     }
 }
 
