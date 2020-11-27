@@ -14,9 +14,6 @@ import java.util.Queue;
  * @Description TODO
  */
 public class L102 {
-    public boolean isNumber(String s) {
-
-    }
 
     public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> listList = new ArrayList<>();
