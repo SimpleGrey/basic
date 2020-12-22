@@ -11,4 +11,10 @@ public class L1030 {
         return null;
     }
 
+    public static void main(String[] args) {
+        int x = -121;
+        StringBuilder s = new StringBuilder(x + "");
+        String reverse = s.reverse().toString();
+        System.out.println( reverse.equals(x + ""));
+    }
 }
